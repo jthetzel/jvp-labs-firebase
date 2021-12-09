@@ -36,8 +36,8 @@ jobs:
         run: ls -haltr
 
       - name: Install Firebase Functions dependencies
-        working-directory: jvp-labs-firebase/functions
-        run: npm install
+        working-directory: ./functions
+        run: yarn install
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -50,8 +50,8 @@ jobs:
           echo test, and deploy your project.
 
       - name: Run Firebase Functions tests
-        working-directory: jvp-labs-firebase/functions
-        run: npm test:emulator
+        working-directory: ./functions
+        run: yarn test:emulator
         env:
           CLOUD_PROJECT: jvp-labs-firebase
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
