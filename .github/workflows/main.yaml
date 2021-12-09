@@ -29,7 +29,6 @@ jobs:
           node-version: "16"
 
       - name: List directory
-        working-directory: jvp-labs-firebase/functions
         run: ls
 
       - name: Install Firebase Functions dependencies
