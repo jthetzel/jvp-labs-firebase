@@ -43,11 +43,11 @@ jobs:
 
       - name: Install Firebase Functions dependencies
         working-directory: jvp-labs-firebase/functions
-        run: yarn install
+        run: npm install
 
       - name: Run Firebase Functions tests
         working-directory: jvp-labs-firebase/functions
-        run: yarn test:emulator
+        run: npm test:emulator
         env:
           CLOUD_PROJECT: jvp-labs-firebase
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
