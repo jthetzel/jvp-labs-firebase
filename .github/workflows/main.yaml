@@ -24,6 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -34,3 +37,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Install Firebase Functions dependencies
+        run: yarn install
+
+      - name: Run Firebase Functions tests
+        run: yarn test:emulator
+        env:
+          CLOUD_PROJECT: jvp-labs-firebase
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
