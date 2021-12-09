@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0",
+    "firebase-tools": "^9.23.1",
     "jest": "^27.4.3"
   },
   "private": true
