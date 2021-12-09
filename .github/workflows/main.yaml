@@ -28,8 +28,13 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      - name: List directory
+        working-directory: jvp-labs-firebase/functions
+        run: ls
+
+      - name: Install Firebase Functions dependencies
+        working-directory: jvp-labs-firebase/functions
+        run: npm install
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -40,10 +45,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-      - name: Install Firebase Functions dependencies
-        working-directory: jvp-labs-firebase/functions
-        run: npm install
 
       - name: Run Firebase Functions tests
         working-directory: jvp-labs-firebase/functions
