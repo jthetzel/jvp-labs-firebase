@@ -25,10 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-        working-directory: jvp-labs-firebase/functions
         with:
           node-version: "16"
           cache: "yarn"
+          cache-dependency-path: jvp-labs-firebase/functions/yarn.lock
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
