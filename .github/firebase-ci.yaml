@@ -15,3 +15,4 @@ jobs:
         run: firebase emulators:exec --project jvp-labs-firebase 'yarn test'
         env:
           CLOUD_PROJECT: jvp-labs-firebase
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
