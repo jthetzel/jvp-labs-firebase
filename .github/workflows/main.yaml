@@ -39,9 +39,11 @@ jobs:
           echo test, and deploy your project.
 
       - name: Install Firebase Functions dependencies
+        working-directory: rpas-firebase-frontend/functions
         run: yarn install
 
       - name: Run Firebase Functions tests
+        working-directory: rpas-firebase-frontend/functions
         run: yarn test:emulator
         env:
           CLOUD_PROJECT: jvp-labs-firebase
