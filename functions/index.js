@@ -8,8 +8,6 @@ const functions = require("firebase-functions");
 //   response.send("Hello from Firebase!");
 // });
 
-console.log('Success!')
-
 function hello(name) {
   const message = `Hello, ${name}!`
 
