@@ -1,0 +1,17 @@
+on: [push, pull_request]
+jobs:
+  emulator_test:
+    name: Run all tests using Firebase Emulator Suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16"
+      - name: Install dependencies
+        run: install
+      - name: Run all the tests
+        working-directory: rpas-firebase-frontend/functions
+        run: firebase emulators:exec --project jvp-labs-firebase 'yarn test'
+        env:
+          CLOUD_PROJECT: jvp-labs-firebase
