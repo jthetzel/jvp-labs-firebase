@@ -31,6 +31,10 @@ jobs:
       - name: List directory
         run: ls
 
+      - name: List functinos directory
+        working-directory: ./functions
+        run: ls -haltr
+
       - name: Install Firebase Functions dependencies
         working-directory: jvp-labs-firebase/functions
         run: npm install
